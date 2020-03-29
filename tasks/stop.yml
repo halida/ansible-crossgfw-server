@@ -1,0 +1,4 @@
+- name: stop ss
+  service: name=ss state=stopped enabled=false
+- name: stop kcp
+  service: name=kcp state=stopped enabled=false

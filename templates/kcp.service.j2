@@ -1,0 +1,10 @@
+[Unit]
+Description=KCP
+
+[Service]
+Type=simple
+ExecStart={{kcp_path}}/{{kcp_bin}} -t "127.0.0.1:{{ss_port}}" -l ":{{kcp_port}}" -key "{{kcp_password}}" -mtu 1400 -sndwnd 2048 -rcvwnd 2048 -mode fast2
+User={{ansible_user_id}}
+
+[Install]
+WantedBy=multi-user.target
