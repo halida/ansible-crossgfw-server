@@ -1,8 +1,10 @@
 ss_port: 4433
-ss_password: password
+# ss_password: password
 kcp_port: 42901
-kcp_password: password
-kcp_download_url: "https://github.com/xtaci/kcptun/releases/download/v20170525/kcptun-linux-amd64-20170525.tar.gz"
+# kcp_password: password
+
+# https://github.com/xtaci/kcptun/releases
+kcp_download_url: "https://github.com/xtaci/kcptun/releases/download/v20200701/kcptun-linux-amd64-20200701.tar.gz"
 kcp_bin: "server_linux_amd64"
 kcp_path: "/etc/kcp"
 
