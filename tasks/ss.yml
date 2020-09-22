@@ -2,12 +2,15 @@
 - name: ss repo
   apt_repository:
     repo: "ppa:max-c-lv/shadowsocks-libev"
+
 - name: install ss
   apt:
     name: shadowsocks-libev
+
 - name: make ss an service
   template:
     src: "ss.service.j2"
     dest: "/etc/systemd/system/ss.service"
+
 - name: start ss
   service: name=ss state=restarted enabled=true
