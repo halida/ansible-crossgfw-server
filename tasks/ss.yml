@@ -7,10 +7,8 @@
   apt:
     name: shadowsocks-libev
 
-- name: make ss an service
-  template:
-    src: "ss.service.j2"
-    dest: "/etc/systemd/system/ss.service"
-
-- name: start ss
-  service: name=ss state=restarted enabled=true
+- import_role:
+    name: halida.cmd_service
+  vars:
+    name: ss
+    cmd: "/usr/bin/ss-server -p {{ss_port}} -k '{{ss_password}}' -m chacha20-ietf-poly1305"

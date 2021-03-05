@@ -15,10 +15,8 @@
     remote_src: True
   when: p_kcp.stat.exists is defined and not p_kcp.stat.exists
 
-- name: make kcp an service
-  template:
-    src: "kcp.service.j2"
-    dest: "/etc/systemd/system/kcp.service"
-- name: start kcp
-  service: name=kcp state=restarted enabled=true
-
+- import_role:
+    name: halida.cmd_service
+  vars:
+    name: kcp
+    cmd: "{{kcp_path}}/{{kcp_version}}/{{kcp_bin}} -t '127.0.0.1:{{ss_port}}' -l ':{{kcp_port}}' -key '{{kcp_password}}' -mtu 1400 -sndwnd 2048 -rcvwnd 2048 -mode fast2"
