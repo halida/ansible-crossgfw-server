@@ -1,2 +1,2 @@
-- include: ss.yml
-- include: kcp.yml
+- include_tasks: ss.yml
+- include_tasks: kcp.yml

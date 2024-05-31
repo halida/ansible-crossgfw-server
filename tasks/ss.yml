@@ -1,7 +1,4 @@
 # ss
-# - name: ss repo
-#   apt_repository:
-#     repo: "ppa:max-c-lv/shadowsocks-libev"
 
 - name: install ss
   apt:

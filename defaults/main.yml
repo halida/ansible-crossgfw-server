@@ -1,11 +1,11 @@
 ss_port: 4433
 # ss_password: password
-kcp_port: 42901
+kcp_port: 42901-44901
 # kcp_password: password
 
 # https://github.com/xtaci/kcptun/releases
 kcp_arch: 'amd64'
-kcp_version: "20200701"
+kcp_version: "20231012"
 kcp_bin: "server_linux_amd64"
 kcp_path: "/etc/kcp"
 
