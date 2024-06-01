@@ -4,6 +4,10 @@
   apt:
     name: shadowsocks-libev
 
+- ansible.builtin.systemd_service:
+    name: shadowsocks-libev
+    enabled: false
+
 - import_role:
     name: halida.cmd_service
   vars:
